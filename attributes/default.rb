@@ -10,7 +10,7 @@ node.override['mysql']['client']['packages'] = [ 'mysql-community-client', 'mysq
 #server settings
 node.override['mysql']['server']['packages'] = ['mysql-community-server','mysql-community-devel','mysql-community-libs','mysql-community-libs-compat']
 
-node.override['mysql']['server']['service_name'] = 'mysqld'
+node.force_override['mysql']['server']['service_name'] = 'mysqld'
 
 when "debian"
 #client setting
