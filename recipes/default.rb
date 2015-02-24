@@ -51,12 +51,13 @@ when "rhel"
     notifies :create, "ruby_block[reload-internal-yum-cache]", :immediately
   end
 
-  remote_file "/tmp/mysql-community-release-el.noarch.rpm" do
+  r = remote_file "/tmp/mysql-community-release-el.noarch.rpm" do
     source rpm_url
     owner "root"
     group "root"
     mode 0644
     notifies :install, "rpm_package[/tmp/mysql-community-release-el.noarch.rpm]", :immediately
-    action :create
+    action :nothing
   end
+  r.run_action(:create)
 end
