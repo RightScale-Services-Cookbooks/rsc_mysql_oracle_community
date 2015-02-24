@@ -45,7 +45,7 @@ when "rhel"
     action :nothing
   end
 
-  rpm_package "/tmp/mysql-community-release-el.noarch.rpm" do
+  p = rpm_package "/tmp/mysql-community-release-el.noarch.rpm" do
     action :nothing
     notifies :run, "execute[create-yum-cache]", :immediately
     notifies :create, "ruby_block[reload-internal-yum-cache]", :immediately
@@ -56,8 +56,9 @@ when "rhel"
     owner "root"
     group "root"
     mode 0644
-    notifies :install, "rpm_package[/tmp/mysql-community-release-el.noarch.rpm]", :immediately
+    #notifies :install, "rpm_package[/tmp/mysql-community-release-el.noarch.rpm]", :immediately
     action :nothing
   end
   r.run_action(:create)
+  p.run_action(:install)
 end
