@@ -62,3 +62,5 @@ when "rhel"
   r.run_action(:create)
   p.run_action(:install)
 end
+
+Chef::Log.info "Service_name: #{node['mysql']['server']['service_name']}"
