@@ -8,7 +8,7 @@ when "rhel"
 node.override['mysql']['client']['packages'] =[ 'mysql-community-client', 'mysql-community-devel' ]
 
 #server settings
-node.override['mysql']['server']['packages'] =['mysql-community-server','mysql-community-devel','mysql-community-shared']
+node.override['mysql']['server']['packages'] =['mysql-community-server','mysql-community-devel','mysql-community-libs','mysql-community-libs-compat']
 
 when "debian"
 #client setting
