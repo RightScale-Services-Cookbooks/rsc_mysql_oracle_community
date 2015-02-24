@@ -60,5 +60,3 @@ when "rhel"
     action :create
   end
 end
-
-include_recipe "rs-mysql::default"
