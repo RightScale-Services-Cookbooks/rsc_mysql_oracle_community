@@ -7,6 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
 depends "marker"
+depends "yum"
 depends 'rs-mysql', '1.1.6'
 
 recipe "rsc_mysql_oracle_community::default", "sets up mysql packages"
