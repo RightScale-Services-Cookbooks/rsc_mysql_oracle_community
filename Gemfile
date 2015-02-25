@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'berkshelf'
 gem 'thor-foodcritic'
-gem 'test-kitchen'
-gem 'kitchen-vagrant'
 group :integration do
 # Prior to 0.1.6, libyaml is vulnerable to a heap overflow exploit from malicious YAML payloads.
 # This solution is suggested to update psych:
