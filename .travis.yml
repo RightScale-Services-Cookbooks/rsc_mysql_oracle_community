@@ -4,3 +4,6 @@ rvm:
 - 1.9.3
 before_script: bundle exec berks install
 script: bundle exec strainer test --except kitchen
+notifications:
+  slack:
+    secure: JUkke7v3yL346i5Wf9VDL0uZyFVrGsAUCrQiZ0WwB2a/P6nvY79OolxiVkioPIpgUmQDs7Jp2uikZueC4SUZhsGsPMjwi3vsBLNr1BeMtuBB3PL04no7ORZZPGMfGeeYAliz3DouplEMeTZ4MHEfTgCRIa6Y9MN+Y+7ExmMC4z4=
