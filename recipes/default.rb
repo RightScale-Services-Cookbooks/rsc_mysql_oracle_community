@@ -45,13 +45,13 @@ when "rhel"
     action :nothing
   end
 
-  p = rpm_package "/tmp/mysql-community-release-el.noarch.rpm" do
+  p = rpm_package "#{Chef::Config[:file_cache_path]}/mysql-community-release-el.noarch.rpm" do
     action :nothing
     notifies :run, "execute[create-yum-cache]", :immediately
     notifies :create, "ruby_block[reload-internal-yum-cache]", :immediately
   end
 
-  r = remote_file "/tmp/mysql-community-release-el.noarch.rpm" do
+  r = remote_file "#{Chef::Config[:file_cache_path]}/mysql-community-release-el.noarch.rpm" do
     source rpm_url
     owner "root"
     group "root"
